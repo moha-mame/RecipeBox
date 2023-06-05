@@ -30,6 +30,7 @@
             {% if request.user.is_authenticated %}
             <div>
               <!-- Rating form -->
+              <!--
               <form method="post" action="{% url 'rate_recipe' obj.pk %}">
                 {% csrf_token %}
                 <label for="rating">Rate:</label>
@@ -38,18 +39,20 @@
                 <textarea name="review" rows="4"></textarea>
                 <button type="submit" class="btn btn-primary">Submit Rate and Review</button>
             </form>
-            
+        -->
           {% endif %}
         </div>
         <div class="card-footer text-muted">
             Created by: {{ obj.created_by.first_name }} {{ obj.created_by.last_name }}
         </div>
         <!-- Add the review and rating section -->
+        <!--
         {% if obj.rating and obj.review %}
         <div class="card-footer text-muted">
             <h6><b>Rating:</b> {{ obj.rating }}</h6>
             <h6><b>Review:</b> {{ obj.review }}</h6>
         </div>
+    -->
         {% endif %}
     </div>
 </div>

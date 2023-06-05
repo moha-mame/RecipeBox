@@ -114,14 +114,15 @@ def review_recipe(request, recipe_id):
 
 
 
-def search_recipes(request):
-    query = request.GET.get('query')
-    results = recipe.objects.filter(recipe_name__icontains=query)
-    context = {
-        'search_results': results
-    }
-    return render(request, 'recipes/search_results.html', context)
-
+def search_recipe(request):
+    if request.method == 'GET':
+        query = request.GET.get('query')
+        if query:
+            recipes = recipe.objects.filter(recipe_name__icontains=query)
+            return render(request, 'recipes/search_results.html', {'recipes': recipes})
+        else:
+            print("No information to show")
+            return render(request, 'recipes/search_results.html', {})
 
 '''def search_recipes(request):
     query = request.GET.get('query')

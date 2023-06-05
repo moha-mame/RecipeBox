@@ -1,23 +1,41 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'recipes/css/searchresults.css' %}">
+
+
     <title>Search Results</title>
+    <!-- CSS and other dependencies -->
+    <!-- Add your CSS and dependencies here -->
 </head>
 <body>
     <h1>Search Results</h1>
-    <ul>
-        {% for recipe in search_results %}
-        <li>
-            <h2>{{ recipes_recipe.recipe_name }}</h2>
-            <p>Category: {{ recipes_recipe.category }}</p>
-            <p>Ingredients: {{ recipes_recipe.ingredients }}</p>
-            <p>Instructions: {{ recipes_recipe.instructions }}</p>
-        </li>
-        {% empty %}
-        <li>No results found.</li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        <div class="row justify-content-center m-4" id="search-results">
+            {% if recipes %}
+                {% for recipe in recipes %}
+                    <div class="col-md-4">
+                        <div class="card m-3 p-2" id="recipe-card">
+                            <img src="{{ recipe.recipe_pic.url }}" class="card-img-top recipe-image" alt="Recipe Image">
+                            <div class="card-body">
+                                <h4 class="card-title mt-1">{{ recipe.recipe_name }}</h4>
+                                <p class="card-text mt-1">{{ recipe.category }}</p>
+                                <a href="{% url 'viewrecipe' recipe.id  %}" class="btn btn-primary m-1">View Recipe</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No recipes available</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    
+    
 </body>
 </html>
