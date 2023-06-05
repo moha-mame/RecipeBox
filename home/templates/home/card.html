@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for obj in data %}
+      {% if obj.created_by == request.user %}
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="/{{ obj.recipe_pic }}" class="card-img-top" alt="Recipe Image">
+            <div class="card-body">
+              <h5 class="card-title">{{ obj.recipe_name }}</h5>
+              <p class="card-text">Created by: {{ obj.created_by.first_name }} {{ obj.created_by.last_name }}</p>
+              <div class="button-group">
+                <a href="{% url 'viewrecipe' obj.pk %}" class="btn btn-outline-success">View</a>
+                <a href="{% url 'editrecipe' obj.pk %}" class="btn btn-outline-primary">Edit</a>
+                <a href="{% url 'deleterecipe' obj.pk %}" class="btn btn-outline-danger">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="/{{ obj.recipe_pic }}" class="card-img-top" alt="Recipe Image">
+            <div class="card-body">
+              <h5 class="card-title">{{ obj.recipe_name }}</h5>
+              <p class="card-text">Created by: {{ obj.created_by.first_name }} {{ obj.created_by.last_name }}</p>
+              <div class="button-group">
+                <a href="{% url 'viewrecipe' obj.id %}" class="btn btn-outline-success">View</a>
+              </div>            
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      
+      {% if forloop.counter == 10 %}
+        <div class="col-12 text-center mt-4">
+          <button class="btn btn-primary show-more-btn">Show More</button>
+        </div>
+      {% endif %}
+      
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const showMoreBtn = document.querySelector('.show-more-btn');
+  const cards = document.querySelectorAll('.row-cols-1 .col-3');
+  const hiddenCards = Array.from(cards).slice(10);
+  
+  hiddenCards.forEach(function(card) {
+    card.classList.add('d-none');
+  });
+  
+  showMoreBtn.addEventListener('click', function() {
+    hiddenCards.forEach(function(card) {
+      card.classList.remove('d-none');
+    });
+    
+    showMoreBtn.style.display = 'none';
+  });
+});
+</script>

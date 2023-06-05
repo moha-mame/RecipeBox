@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Alice|Amaranth:400,700|Hind|Kaushan+Script" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha256-qlPVgvl+tZTCpcxYJFdHB/m6mDe84wRr+l81VoYPTgQ=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha256-fx038NkLY4U1TCrBDiu5FWPEa9eiZu01EiLryshJbCo=" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+</head>
+<body id="homepage-bg">
+{% include 'home/nav.html' %}
+<section class="hero">
+    <div class="container1">
+      <h1 class="hero-title">Welcome to RecipeBox</h1>
+      <p class="hero-subtitle">Explore, Share, and Discover Delicious Recipes</p>
+    </div>
+  </section>
+
+{% include 'home/card.html' %}
+</body>
+</html>

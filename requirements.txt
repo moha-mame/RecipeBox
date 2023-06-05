@@ -1,0 +1,12 @@
+asgiref==3.7.1
+certifi==2023.5.7
+charset-normalizer==3.1.0
+Django==4.2.1
+django-filter @ git+https://github.com/carltongibson/django-filter.git@f38dcdd32d20095cb823cbd5e85946510f146e29
+django-widget-tweaks==1.4.12
+idna==3.4
+mysqlclient==2.1.1
+Pillow==9.5.0
+requests==2.31.0
+sqlparse==0.4.4
+urllib3==2.0.2

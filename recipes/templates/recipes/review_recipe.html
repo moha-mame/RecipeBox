@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review Recipe</title>
+    <!-- Add your CSS styling here -->
+</head>
+<body>
+    <h1>Review Recipe</h1>
+
+    <form method="POST" action="{% url 'review_recipe' recipe_id %}">
+        {% csrf_token %}
+        <!-- Add your form fields here -->
+        <br>
+        <label for="review">Review:</label>
+        <textarea name="review" id="review" rows="4" required></textarea>
+        <br>
+        <button type="submit">Submit Review</button>
+    </form>
+</body>
+</html>

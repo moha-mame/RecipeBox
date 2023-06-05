@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About RecipeBox</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Alice|Amaranth:400,700|Hind|Kaushan+Script" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'users/css/about.css' %}">
+
+</head>
+<body>
+<!--navbar-->
+
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#"><b>RecipeBox</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'about' %}">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Welcome to RecipeBox</h1>
+      <p class="hero-subtitle">Explore, Share, and Discover Delicious Recipes</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h2 class="section-title">About RecipeBox</h2>
+      <p class="section-description">RecipeBox is a vibrant community for food enthusiasts to connect, share, and discover amazing recipes from around the world.</p>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static '/images/eggs-tomato.jpeg' %}" alt="About Image" class="about-image">
+        </div>
+        <div class="col-md-6">
+          <h3 class="about-subtitle">Unleash Your Culinary Creativity</h3>
+          <p class="about-text">Whether you're a professional chef or a passionate home cook, RecipeBox provides a platform to showcase your culinary creations. Share your favorite recipes, cooking techniques, and tips with the RecipeBox community.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="about-subtitle">Discover Amazing Recipes</h3>
+          <p class="about-text">Browse through a vast collection of recipes spanning various cuisines and categories. From appetizers to desserts, find inspiration for your next meal and uncover hidden culinary gems shared by fellow food lovers.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="{% static 'images/eggs-tomato.jpeg' %}" alt="About Image" class="about-image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <img src="{% static 'images/bgimg22.jpeg' %}" alt="About Image" class="about-image">
+        </div>
+        <div class="col-md-6">
+          <h3 class="about-subtitle">Connect with Food Enthusiasts</h3>
+          <p class="about-text">Join a community of passionate food lovers, follow their profiles, and explore their unique recipes. Engage in discussions, share cooking tips, and foster meaningful connections with like-minded individuals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include 'home/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <ul>
+        {% for recipe in search_results %}
+        <li>
+            <h2>{{ recipes_recipe.recipe_name }}</h2>
+            <p>Category: {{ recipes_recipe.category }}</p>
+            <p>Ingredients: {{ recipes_recipe.ingredients }}</p>
+            <p>Instructions: {{ recipes_recipe.instructions }}</p>
+        </li>
+        {% empty %}
+        <li>No results found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
