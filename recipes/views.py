@@ -10,7 +10,7 @@ from django.db.models import Q
 import requests
 from recipes.models import recipe
 from django.db import models
-from .forms import ReviewForm
+
 
 
 # Create your views here.
@@ -87,30 +87,6 @@ class DeleteRecipe(TemplateView):
         recipes = get_object_or_404(recipe, pk=id)
         recipes.delete()
         return redirect('viewprofile')
-
-
-
-
-def rate_recipe(request, recipe_id):
-    recipe = get_object_or_404(recipe, pk=recipe_id)
-    if request.method == 'POST':
-        rating = float(request.POST['rating'])
-        recipe.rating = rating
-        recipe.save()
-        return redirect('viewrecipe', recipe_id=recipe_id)
-    else:
-        return render(request, 'recipes/viewrecipe.html', {'obj': recipe})
-
-
-def review_recipe(request, recipe_id):
-    recipe = get_object_or_404(recipe, pk=recipe_id)
-    if request.method == 'POST':
-        review = request.POST['review']
-        recipe.review = review
-        recipe.save()
-        return redirect('viewrecipe', recipe_id=recipe_id)
-    else:
-        return render(request, 'recipes/viewrecipe.html', {'obj': recipe})
 
 
 

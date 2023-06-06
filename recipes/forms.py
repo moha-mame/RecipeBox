@@ -10,6 +10,3 @@ class CreateRecipeForm(ModelForm):
                    'created_by':forms.HiddenInput()}
         
 
-class ReviewForm(forms.Form):
-    rating = forms.IntegerField(min_value=1, max_value=5)
-    review = forms.CharField(widget=forms.Textarea, required=False)

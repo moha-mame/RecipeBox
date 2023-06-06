@@ -10,8 +10,7 @@ class recipe(models.Model):
     recipe_pic = models.ImageField(upload_to="images")
     How_to_make = models.CharField(max_length=600)
     created_by = models.ForeignKey(to=User,on_delete=models.CASCADE)
-    rating = models.FloatField(default=0)
-    review = models.TextField(blank=True)
+
 
 
     def __str__(self):
