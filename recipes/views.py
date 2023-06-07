@@ -8,9 +8,17 @@ from django.utils.decorators import method_decorator
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 import requests
-from recipes.models import recipe
+from recipes.models import recipe, Comment
 from django.db import models
-
+from django.http import HttpResponse
+from django.views import View
+from django.template.loader import get_template, render_to_string
+from xhtml2pdf import pisa
+from io import BytesIO
+from weasyprint import HTML, CSS
+import tempfile
+from django.contrib.staticfiles.storage import FileSystemStorage
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -89,7 +97,56 @@ class DeleteRecipe(TemplateView):
         return redirect('viewprofile')
 
 
+from recipes.forms import CommentForm
 
+@csrf_exempt
+def add_comment(request, id):
+    recipe_obj = get_object_or_404(recipe, pk=id)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.recipe = recipe_obj
+            comment.user = request.user
+            comment.save()
+            return redirect('view_recipe', id=id)
+    else:
+        form = CommentForm()
+
+    context = {'form': form, 'recipe': recipe_obj}
+    return render(request, 'recipes/viewrecipe.html', context)
+
+class GeneratePDF(View):
+    def get(self, request, *args, **kwargs):
+        recipe_id = kwargs.get('id')
+        obj = get_object_or_404(recipe, pk=recipe_id)
+        context = {'obj': obj}
+        template = get_template('recipes/pdf_template.html')
+        html = template.render(context)
+
+        # Generate PDF using WeasyPrint
+        pdf_file = tempfile.NamedTemporaryFile(delete=True)
+        css_file = tempfile.NamedTemporaryFile(delete=True)
+
+        # Save the CSS for WeasyPrint to access it
+        css = "@page { size: A4; margin: 1cm; }"
+        with open(css_file.name, 'w') as f:
+            f.write(css)
+
+        # Render the HTML template with the CSS and generate the PDF
+        HTML(string=html, base_url=FileSystemStorage().base_url).write_pdf(pdf_file.name, stylesheets=[CSS(css_file.name)])
+
+        # Prepare the response
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = f'attachment; filename="{obj.recipe_name}.pdf"'
+
+        # Set the PDF file content
+        with open(pdf_file.name, 'rb') as f:
+            response.write(f.read())
+
+        return response
+    
 def search_recipe(request):
     if request.method == 'GET':
         query = request.GET.get('query')
@@ -100,24 +157,7 @@ def search_recipe(request):
             print("No information to show")
             return render(request, 'recipes/search_results.html', {})
 
-'''def search_recipes(request):
-    query = request.GET.get('query')
-    results = []
 
-    if query:
-        # Search by recipe name, ingredient, or category
-        results = recipe.objects.filter(
-            models.Q(recipe_name__icontains=query) |
-            models.Q(ingredient__icontains=query) |
-            models.Q(category__icontains=query)
-        )
-
-    context = {
-        'results': results,
-        'query': query
-    }
-    return render(request, 'recipes/search_results.html', context)
-'''
 '''
 def search_recipes(query):
     api_key = '2a785c168dce4b709d57a406313205de'
