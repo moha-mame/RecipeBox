@@ -1,14 +1,14 @@
 from django.shortcuts import render,redirect
-from .forms import CreateRecipeForm
-from .models import recipe
+from .forms import CreateRecipeForm, ReviewForm
+from .models import recipe,Review
 from users.models import Profile
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from django.utils.decorators import method_decorator
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
-import requests
-from recipes.models import recipe, Comment
+from django.contrib.auth.models import User
+from recipes.models import recipe
 from django.db import models
 from django.http import HttpResponse
 from django.views import View
@@ -18,7 +18,6 @@ from io import BytesIO
 from weasyprint import HTML, CSS
 import tempfile
 from django.contrib.staticfiles.storage import FileSystemStorage
-from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -42,25 +41,63 @@ class CreateRecipe(TemplateView):
             self.context['form'] = form
             return render(request,self.template_name,self.context)
 
-
 @method_decorator(login_required(login_url='login'), name='dispatch')
-class ViewRecipe(TemplateView):
+class ViewRecipe(View):
     template_name = 'recipes/viewrecipe.html'
-    context ={}
 
-    def get(self,request,*args,**kwargs):
-        id =kwargs.get('id')
-        obj = get_object_or_404(recipe,pk=id)
-        self.context['obj'] = obj
+    def get_context_data(self, request, recipe_id):
+        obj = get_object_or_404(recipe, pk=recipe_id)
+        reviews = Review.objects.filter(recipe=obj)
+        reviews_with_user = []
+        for review in reviews:
+            user = review.user
+            reviews_with_user.append((review, user))
+        context = {
+            'obj': obj,
+            'reviews': reviews_with_user,
+        }
         user = request.user.id
         if user:
             try:
                 profile = Profile.objects.get(user=user)
-                self.context['profile'] = 'pro_exist'
-                return render(request, self.template_name, self.context)
-            except Exception:
+                context['profile'] = 'pro_exist'
+            except Profile.DoesNotExist:
                 return redirect('createprofile')
-        return render(request,self.template_name,self.context)
+        return context
+
+    def get(self, request, *args, **kwargs):
+        recipe_id = kwargs.get('id')
+        context = self.get_context_data(request, recipe_id)
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        recipe_id = kwargs.get('id')
+        obj = get_object_or_404(recipe, pk=recipe_id)
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.recipe = obj
+            review.user = request.user
+            review.save()
+        context = self.get_context_data(request, recipe_id)
+        context['form'] = form
+        return render(request, self.template_name, context)
+
+    def delete(self, request, *args, **kwargs):
+        review_id = kwargs.get('review_id')
+        review = get_object_or_404(Review, pk=review_id)
+        if review.user == request.user:
+            review.delete()
+        return redirect('viewrecipe', id=review.recipe_id)
+
+    def put(self, request, *args, **kwargs):
+        review_id = kwargs.get('review_id')
+        review = get_object_or_404(Review, pk=review_id)
+        if review.user == request.user:
+            form = ReviewForm(request.PUT, instance=review)
+            if form.is_valid():
+                form.save()
+        return redirect('viewrecipe', id=review.recipe_id)
 
 
 @method_decorator(login_required(login_url='login'), name='dispatch')
@@ -96,26 +133,6 @@ class DeleteRecipe(TemplateView):
         recipes.delete()
         return redirect('viewprofile')
 
-
-from recipes.forms import CommentForm
-
-@csrf_exempt
-def add_comment(request, id):
-    recipe_obj = get_object_or_404(recipe, pk=id)
-
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.recipe = recipe_obj
-            comment.user = request.user
-            comment.save()
-            return redirect('view_recipe', id=id)
-    else:
-        form = CommentForm()
-
-    context = {'form': form, 'recipe': recipe_obj}
-    return render(request, 'recipes/viewrecipe.html', context)
 
 class GeneratePDF(View):
     def get(self, request, *args, **kwargs):
