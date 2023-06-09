@@ -1,108 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe Sharing Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-  <!-- CSS -->
-  <style>
-    body {
-      font-family: sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-      margin: 0;
-      padding: 0;
-    }
+        .hero {
+            background-image: url('path/to/your/background/image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
 
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 20px;
-    }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
 
-    h1 {
-      font-size: 24px;
-      margin-top: 0;
-    }
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
 
-    p {
-      margin-bottom: 10px;
-    }
+        .hero .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ff4081;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 5px;
+        }
 
-    nav {
-      margin-top: 20px;
-    }
+        .features {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            text-align: center;
+        }
 
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        .features .feature {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
 
-    section {
-      margin-top: 20px;
-    }
+        .features .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
 
-    img {
-      max-width: 100%;
-    }
+        .features .feature h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
+        .features .feature p {
+            font-size: 18px;
+            color: #777;
+        }
 
-    li {
-      margin-bottom: 10px;
-    }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
 
-    video {
-      max-width: 100%;
-    }
-  </style>
-
+        .footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1 id="title">Recipe Sharing Website</h1>
-    <p>A website where you can find, share, and rate recipes.</p>
-    <nav>
-      <a href="#intro">Intro</a>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-    </nav>
-  </header>
-  <section id="intro">
-    <img src="cover.jpg" alt="Cover image" class="cover-image">
-    <h2>Recipe Sharing Website</h2>
-    <p>This website is a place where you can find, share, and rate recipes. Whether you're looking for a new recipe to try or want to share your own creations, this website is the perfect place for you.</p>
-    <a href="app.html" class="button">Try it out!</a>
-  </section>
-  <section id="features">
-    <h2>Features</h2>
-    <ul class="features">
-      <li>Find recipes from a variety of cuisines</li>
-      <li>Share your own recipes with the community</li>
-      <li>Rate and review recipes</li>
-      <li>Save recipes to your favorites</li>
-    </ul>
-  </section>
-  <section id="about">
-    <h2>About</h2>
-    <p>This website was created by a team of students at Holberton School. We were inspired to create this website because we love food and we wanted to create a place where people could share their love of food with others.</p>
-    <ul class="about">
-      <li>Team member 1: LinkedIn profile, GitHub profile, Twitter handle</li>
-      <li>Team member 2: LinkedIn profile, GitHub profile, Twitter handle</li>
-      <li>Team member 3: LinkedIn profile, GitHub profile, Twitter handle</li>
-    </ul>
-    <p>This website is still under development, but we're excited to see where it goes. We hope you enjoy using it!</p>
-  </section>
-  <video src="video.mp4" controls></video>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Recipe Sharing</h1>
+            <p>Discover and share amazing recipes with food lovers around the world.</p>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Get Started</a>
+              </li>
+         </div>
+    </div>
+
+    <div id="features" class="features">
+        <h2>Features</h2>
+        <div class="feature">
+            <img src="path/to/your/feature-image-1.png" alt="Feature 1">
+            <h3>Discover Recipes</h3>
+            <p>Explore a wide variety of recipes from different cuisines and categories.</p>
+        </div>
+        <div class="feature">
+            <img src="path/to/your/feature-image-2.png" alt="Feature 2">
+            <h3>Create Your Own Recipes</h3>
+            <p>Share your favorite recipes with the community and showcase your cooking skills.</p>
+        </div>
+        <div class="feature">
+            <img src="path/to/your/feature-image-3.png" alt="Feature 3">
+            <h3>Connect with Food Lovers</h3>
+            <p>Interact with other food enthusiasts, exchange tips, and get inspired by their culinary creations.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2023 Recipe Sharing. All rights reserved.</p>
+    </div>
 </body>
 </html>
-
