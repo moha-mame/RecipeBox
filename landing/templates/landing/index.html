@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>RecipeBox</title>
+
+    {% load static %}
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
 </head>
 <body>
 
     <section id="Home">
         <nav>
             <div class="logo">
-                <img src="image/logo.png">
+                <img src="{% static 'landing/images/logo.png' %}" alt="About Image" class="about-image">
             </div>
         </nav>
         <div class="main">
@@ -23,7 +26,8 @@
             </div>
 
             <div class="main_image">
-                <img src="image/main_img.png">
+                <img src="{% static 'landing/images/main_img.png' %}" alt="About Image" class="about-image">
+
             </div>
 
         </div>
@@ -40,7 +44,7 @@
         </p>
 
         <div class="main_btn">
-            <a href="#">Get-started</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Get-started</a>
             <i class="fa-solid fa-angle-right"></i>
         </div>
 
@@ -52,7 +56,7 @@
         <div class="about_main">
 
             <div class="image">
-                <img src="image/Food-Plate.png">
+                <img src="{% static 'landing/images/Food-Plate.png' %}" alt="About Image" class="about-image">
             </div>
 
             <div class="about_text">

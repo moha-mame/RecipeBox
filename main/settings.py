@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'recipes',
     'widget_tweaks',
     'django_filters',
-    
+    'landing',
 ]
 
 MIDDLEWARE = [
