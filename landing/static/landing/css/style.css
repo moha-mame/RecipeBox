@@ -84,7 +84,7 @@ section .main .men_text h1 {
 
 section .main .men_text h1 span {
     margin-left: 10px;
-    color: #41fff6f8;
+    color: #0e917af8;
     font-family: mv boli;
     line-height: 1;
 }
@@ -218,7 +218,7 @@ footer .footer_main .footer_tag i {
 }
 
 footer .footer_main .footer_tag i:hover {
-    color: #41fff6f8;
+    color: #0e917af8;
 }
 
 footer .end {
@@ -229,7 +229,7 @@ footer .end {
 }
 
 footer .end span {
-    color: #41fff6f8;
+    color: #0e917af8;
     margin-left: 10px;
 }
 
@@ -251,7 +251,7 @@ footer .end span {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #41fff6;
+    background: #0e917af8;
 }
 
 
