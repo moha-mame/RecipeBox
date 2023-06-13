@@ -1,16 +1,14 @@
 /* about.css */
 body {
-  background-color: #f5f5f5;
+  background-color: white;
 }
 
 .navbar-brand {
-  color: #0dd6c5 !important;
-  font-family: 'Lobster', cursive;
+  color:black !important;
 }
 
-.navbar-nav .nav-link.active,
-.navbar-nav .show > .nav-link {
-  color: #0dd6c5 !important;
+.nav-link {
+  color: #0a0a0a ;
 }
 
 .form-control {
@@ -22,31 +20,6 @@ body {
   padding-top: 2%;
 }
 
-.btn-outline-success,
-.btn-outline-success:focus,
-.btn-outline-success:active,
-.btn-outline-success:hover {
-  color: #0dd6c5 !important;
-  border-color: #0dd6c5 !important;
-}
-
-.card-img-top {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
-}
-
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited {
-  background-color: #0dd6c5 !important;
-}
-
-#bs:hover,
-#bt:hover {
-  background-color: rgb(235, 235, 235);
-}
 
 .top-left {
   position: absolute;
@@ -75,19 +48,10 @@ body {
 
 }
   
-  .hero-title {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .hero-subtitle {
-    font-size: 24px;
-    color: #777;
-  }
-  
   /* About section */
   .about {
     padding: 50px 0;
+    background-color: white
   }
   
   .section-title {
