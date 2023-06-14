@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for obj in data %}
@@ -11,7 +12,7 @@
               <div class="button-group">
                 <a href="{% url 'viewrecipe' obj.pk %}" class="btn btn-outline-success">View</a>
                 <a href="{% url 'editrecipe' obj.pk %}" class="btn btn-outline-primary">Edit</a>
-                <a href="{% url 'deleterecipe' obj.pk %}" class="btn btn-outline-danger">Delete</a>
+                <a href="{% url 'deleterecipe' obj.pk %}" class="btn btn-outline-danger" value="delete">Delete</a>
               </div>
             </div>
           </div>

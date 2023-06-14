@@ -1,65 +1,68 @@
-/* Custom CSS for home_Page */
+/* Custom CSS for Landing Page */
 body {
     background-color: #fff;
   }
-
+  
   .navbar-brand {
-    color: #0f0f0f !important;
-    font-family: 'Alice', cursive;
+    color:black !important;
+    font-family: Tahoma, cursive;
+    font-size: 40px;
   }
-
+  
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
-    color: #0a0a0a !important;
+    color: #1b1b32;
   }
-
+  
   .form-control {
-    border: 1px solid #0dd6c5;
+    border: 1px solid #1b1b32;
   }
-
+  
   .container {
     position: relative;
     padding-top: 2%;
   }
-
+  
   .btn-outline-success,
   .btn-outline-success:focus,
   .btn-outline-success:active,
   .btn-outline-success:hover {
-    color: #0dd6c5 !important;
-    border-color: #0dd6c5 !important;
-  }
+    color: white;
+    border-color: #1b1b32;
+    background-color: #1b1b32;
 
+  }
+  
   .card-img-top {
     width: 100%;
     height: 15vw;
     object-fit: cover;
   }
-
+  
   .btn-primary,
   .btn-primary:hover,
   .btn-primary:active,
   .btn-primary:visited {
-    background-color: #0dd6c5 !important;
+    background-color:#1b1b32;
   }
-
+  
   #bs:hover,
   #bt:hover {
-    background-color: rgb(235, 235, 235);
+    opacity: 70%;
   }
-
+  
   .top-left {
     position: absolute;
     top: 300px;
     left: 20px;
     color: white;
   }
-
+  
   #img-txt {
     font-family: 'Playfair Display', serif;
     color: #0dd6c5;
   }
-
+  
   /* Hero section */
   .hero {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
@@ -73,31 +76,33 @@ body {
     background-attachment: fixed;
 
   }
-
+  
   .hero-title {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #000a15b8;
+    color: #1b1b32;
+    font-weight: 600;
+    font-family: cursive;
   }
-
+  
   .hero-subtitle {
     font-size: 24px;
     color: #777;
   }
-
+  
   .section-title {
     font-size: 32px;
     text-align: center;
     margin-bottom: 30px;
   }
-
+  
   .section-description {
     font-size: 18px;
     color: #777;
     text-align: center;
     margin-bottom: 30px;
   }
-
+  
   /* Container Styles */
   .container1 {
     margin-top: 50px;
@@ -108,7 +113,143 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin: auto;
   }
+ /* Custom CSS for Landing Page */
+body {
+    background-color: #fff;
+  }
+  
+  .navbar-brand {
+    color:black;
+    font-family: Tahoma, cursive;
+    font-size: 40px;
+  }
+  
+  .navbar-nav .nav-link.active,
+  .navbar-nav .show > .nav-link {
+    color: #1b1b32;
+  }
+  
+  .form-control {
+    border: 1px solid #1b1b32;
+  }
+  
+  .container {
+    position: relative;
+    padding-top: 2%;
+  }
+  
+  .btn-outline-success,
+  .btn-outline-success:focus,
+  .btn-outline-success:active,
+  .btn-outline-success:hover {
+    color: white;
+    border-color: #1b1b32;
+    background-color: #1b1b32;
+
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+  }
+  
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    background-color:#1b1b32;
+  }
+  
+  #bs:hover,
+  #bt:hover {
+    opacity: 70%;
+  }
+  
+  .top-left {
+    position: absolute;
+    top: 300px;
+    left: 20px;
+    color: white;
+  }
+  
+  #img-txt {
+    font-family: 'Playfair Display', serif;
+    color: #0dd6c5;
+  }
+  
+  /* Hero section */
+  .hero {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
+      url('../images/prep.jpeg');
+    background-size: 100%;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 30px 0;
+    text-align: center;
+    background-attachment: fixed;
+
+  }
+  
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1b1b32;
+    font-weight: 600;
+    font-family: cursive;
+  }
+  
+  .hero-subtitle {
+    font-size: 24px;
+    color: #777;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .section-description {
+    font-size: 18px;
+    color: #777;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Container Styles */
+  .container1 {
+    margin-top: 50px;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: auto;
+  }
+   .something-about-app{
+    text-align: justify;
+    line-height: : 2px;
+    padding:7% 15%;
+    padding-bottom: 0;
+
+  }
+  form {
+    margin-bottom: 20px;
+  }
+ 
 
   form {
     margin-bottom: 20px;
   }
+   .btn:hover, .btn-primary:hover, input[type="submit"]:hover{
+	             background-color:#1b1b32;
+		               border-color:#1b1b32;
+			                 opacity:70%;
+					   }
+ @media only screen and (max-width:720px){
+	   .card-img-top{
+		       height: 40vw;
+	       }
+       }
