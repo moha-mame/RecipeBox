@@ -1,1 +1,1 @@
-web: gunicorn RecipeBox.wsgi
+web: gunicorn RecipeBox.wsgi:application --log-file -
