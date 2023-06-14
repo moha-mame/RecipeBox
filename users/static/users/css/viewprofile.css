@@ -1,10 +1,16 @@
 
-
 body {
-    font-family: 'Lobster', cursive;
+    font-family: Tahoma, cursive;
     background-color: #f8f9fa;
+   
   }
-  
+  .row{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
   .container {
     margin-top: 50px;
   }
@@ -56,17 +62,38 @@ body {
   .card-text b {
     font-weight: bold;
   }
-  
+  .button-group a{
+
+      width: 27%;
+      padding: 0.5em;
+      margin:0 0.5em;
+      margin-top: 2em;
+      background-color: #1b1b32;
+      text-align: center;
+      margin-bottom: 0.5em;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      border-color:#1b1b32;
+
+    }
+    .button-group a:hover{
+      opacity: 70%;
+      background-color: #1b1b32;
+      border-color: #1b1b32;
+    }
+.button-group a[value="delete"]{
+  background-color: red;
+  border-color: red;
+}
+   
+    
   .col-6 img {
     width: 100%;
     max-width: 200px;
   }
   
-  .card-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+ 
   
   .card-list .card {
     margin: 10px;
@@ -93,4 +120,32 @@ body {
   .card-list .text-muted {
     font-size: 12px;
   }
+  @media only screen and (max-width: 720px){
   
+   
+    h2{
+      text-align: center;
+    }
+    .col-3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:100%;
+    }
+    .button-group a{
+      width: 100%;
+      margin: 0.2em;
+    }
+   .button-group a:first-of-type{
+      margin-top: 2em;
+    }
+    }
+@media only screen and (max-width: 720px){
+
+
+    .button-group a{
+      width: 100%;
+    }
+   
+    }
