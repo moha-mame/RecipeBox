@@ -54,6 +54,9 @@ body {
 h4{
   padding-left: 15px;
 }
+p{
+	text-align:justify;
+}
 li.list-group-item{
   font-size: 12px;
 }
