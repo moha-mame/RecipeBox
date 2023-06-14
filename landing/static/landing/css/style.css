@@ -41,9 +41,30 @@ nav ul img{
     width: 100px;
     margin-right: auto;
 }
+.intro-image{
+	 background-image: /*linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),*/
+      url('../images/prep.jpeg');
+	background-position:center;
+	background-size:100%;
+	height:30vw;
 
+}
+.cover{
+	background-color:rgba(127,127,127,0.8);
+	text-align: center;
+	color:white;
+	width:100%;
+	height:20vh;
+	position:absolute;
+	top:150px;
+	padding-top:20px;
+	border-radius:5px;
+}
+.cover p{
+	margin-top:10px;
+}
 .main_section{
-    margin-top: 7%;
+    margin-top: 2%;
 }
 .main, .about-main{
     display: flex;
@@ -59,35 +80,27 @@ nav ul img{
     text-align: center;
 }
 .main p{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     line-height: 25px;
 }
 .about-main p{
     line-height: 25px;
 }
 .main_text a{
-  
-    color: #1b1b32;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: larger;
     background: #0e917af8;
-    color: #fff;
-     transition: transform 0.3s;
-
-}
-/* moha's style */
-.main_text a{
-	background: #0e917af8;
+    border-radius:5px;
+    background: #0e917af8;
     color: #fff;
     margin-right: 5px;
     text-decoration: none;
     padding: 12px 25px;
     transition: transform 0.3s;
+    
 }
 .main_text i{
 	 color: #fff;
     transition: transform 0.3s;
+    
     }
 .main_text a:hover{
 	transform: translateX(7px);
@@ -114,7 +127,6 @@ nav ul img{
     background: #0e917af8;
 }
 
-   /* moha's style */
 .main_text {
     margin-right: 70px;
 }
@@ -174,9 +186,12 @@ h3{
 }
 p{
 	font-size:15px;}
+.intro-image{
+        height:60vw;
 
-    .main_section{
-    margin-top: 15%;
+}
+.cover{
+        padding-top:30px;
 }
     .main, .about-main{
     flex-direction: column-reverse;
@@ -198,9 +213,7 @@ footer .footer_tag{
 }
 
 @media only screen and (max-width: 620px){
-    .main_section{
-    margin-top: 15%;
-}
+ 
     .main, .about-main{
     flex-direction: column-reverse;
     margin-top: 40px;
