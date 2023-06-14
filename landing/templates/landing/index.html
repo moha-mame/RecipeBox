@@ -5,39 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RecipeBox</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     {% load static %}
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
 </head>
 <body>
 
     <section id="Home">
         <nav>
-            <div class="logo">
-                <img src="{% static 'landing/images/logo.png' %}" alt="About Image" class="about-image">
-            </div>
-
-             <ul>
-                <li><a href="#Home">Home</a></li>
-                <li><a href="#About">About</a></li>
+            <ul>
+                <li class="logo"> <img src="{% static 'landing/images/logo.png' %}" alt="About Image" class="about-image"></li>
+                <li class="navlists"><a href="#home">Home</a></li>
+                <li class="navlists"><a href="#about">About</a></li>
             </ul>
-
         </nav>
-        <div class="main">
+  </section>
 
-            <div class="men_text">
-                <h1>Get Food<span>Recipe</span><br>in a Easy Way</h1>
-            </div>
+  <!-- intro sectin -->
+  <section class="main_section">
+        <div class="main" id="home">
 
             <div class="main_image">
                 <img src="{% static 'landing/images/main_img.png' %}" alt="About Image" class="about-image">
 
             </div>
 
-        </div>
+        <div class="main_text">
 
+            <h1>Get Food<span>Recipe</span> in a Easy Way</h1>
         <p>
             Welcome to our recipe sharing website!
             Indulge in a world of culinary delights and share your favorite recipes with fellow food enthusiasts.
@@ -48,25 +45,25 @@
             there's something to satisfy every palate.
             Join our vibrant community of food lovers and embark on a delicious journey today. Happy cooking!
         </p>
-
-        <div class="main_btn">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Get-started</a>
+        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Get-started</a>
             <i class="fa-solid fa-angle-right"></i>
-        </div>
+    </div>
+</div>
+     
 
     </section>
+<!-- features -->
+
 
     <!--About-->
+        <div class="about-main"  id="about">
 
-    <div class="about" id="About">
-        <div class="about_main">
-
-            <div class="image">
+            <div class="main_image">
                 <img src="{% static 'landing/images/Food-Plate.png' %}" alt="About Image" class="about-image">
             </div>
 
             <div class="about_text">
-                <h1><span>About</span>Us</h1>
+                <h1><span>About</span> Us</h1>
                 <h3>Why Choose us?</h3>
                 <p>
                     At RecipeBox, we're passionate about food and the joy it brings.
@@ -79,6 +76,9 @@
             </div>
 
         </div>
+<!-- self -->
+
+
 
     <!--Footer-->
 
@@ -86,15 +86,15 @@
         <div class="footer_main">
 
             <div class="footer_tag">
-                <h2>Location</h2>
-                <p>Adma</p>
+                <h3>Location</h3>
+                <p>Adama</p>
                 <p>Addis Ababa</p>
-                <p>Ethiopia</p>
+                
 
             </div>
 
             <div class="footer_tag">
-                <h2>Quick Link</h2>
+                <h3>Quick Link</h3>
                 <p>Home</p>
                 <p>About</p>
                 <p>Login</p>
@@ -102,27 +102,28 @@
             </div>
 
             <div class="footer_tag">
-                <h2>Contact</h2>
-                <p>xxxx-xxx-xxx</p>
-                <p>xxxx-xxx-xxx</p>
-                <p>moha.mame04@gmail.com</p>
-                <p>neimanesru34@gmail.com</p>
+                <h3>Contact Us</h3>
+                <address><a href="mailto:neimanesru34@gmail.com">Neima Nesru</a></address>
+                <address><a href="mailto:moha.mame04@gmail.com">Mohammed Abate</a></address>
             </div>
 
 
             <div class="footer_tag">
-                <h2>Follows</h2>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-linkedin-in"></i>
+                <h3>Follow Us on</h3>
+		<a href="https://www.githum.com/Nemuuuu"><i class="fa-brands fa-github"></i></a>
+		<a href="https://www.twitter.com/moha"><i class="fa-brands fa-twitter"></i></a>
+		<a href="https://www.instagram.com/moha"<i class="fa-brands fa-instagram"></i></a>
+		<a href="https://www.linkedin.com/in/neima-nesru-633a5024"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
 
         </div>
 
-        <p class="end">Design by<span><i class="fa-solid fa-face-grin"></i> Mohammed And Neima</span></p>
+        <p class="end">&copy All rights reserved   |   Designed by<span><i class="fa-solid fa-face-grin"></i> Mohammed and Neima</span></p>
 
     </footer>
+
+
+
 
 </body>
 </html>
