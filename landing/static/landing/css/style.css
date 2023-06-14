@@ -149,6 +149,7 @@ footer{
     border-top: 1px solid lightgray;
     background-color: ghostwhite;
    margin-top: 50px;
+   bottom:0;
 }
 footer .footer_main{
     display: flex;
