@@ -1,49 +1,75 @@
-body {
-    font-family: 'Lobster', cursive;
-    background-color: #f8f9fa;
-  }
+/*img{
+max-width:auto !important;
+height:400px !important;
+}*/
 
+body {
+    font-family: Tahoma, cursive ;
+    background-color: red;
+
+  }
+  
   .container {
     margin-top: 50px;
   }
-
+  
   .card {
     width: 400px;
     margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-
+  
   .card-header {
     background-color: #f8f9fa;
     color: #333;
     font-size: 24px;
     border-bottom: none;
   }
-
+  
   .card-img-top {
     height: 200px;
     object-fit: cover;
   }
-
+  
   .card-body {
     padding: 20px;
   }
-
+  
   .card-title {
     font-size: 28px;
-    margin-bottom: 10px;
+
   }
 
   .list-group-item {
     border: none;
     padding: 0;
   }
-
+  
   h6 {
     font-size: 18px;
     margin-bottom: 5px;
-  }
+    margin-top: 1rem;
 
+  }
+h4{
+  padding-left: 15px;
+}
+li.list-group-item{
+  font-size: 12px;
+}
+ label{
+  margin-top: 0.8em;
+  line-height: 2em;
+ }
+
+.btn{
+  margin-top: 2em;
+  border-color: #1b1b32;
+}
+.btn:hover{
+	opacity:40%;
+	border-color:#1b1b32;
+}
   .card-footer {
     background-color: #f8f9fa;
     color: #666;
@@ -52,4 +78,4 @@ body {
     text-align: right;
     padding: 10px;
   }
-  
+
