@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import dj_database_url
+import django_heroku
+from decouple import config 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,7 @@ SECRET_KEY = 'django-insecure-epnd1%c9((jkawru7z&@jur8dth(dg%ci4^q3-ymwu8+$r)zvq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -55,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -83,12 +88,16 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Recipe_db',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # Usually 'localhost' for local development
-        'PORT': '3306',  # Usually '3306' for MySQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME' : BASE_DIR/'db.sqlite3',
+        
+      
+        #'NAME': 'Recipe_db',
+        #'USER': 'root',
+        #'PASSWORD': 'root',
+       # 'HOST': 'localhost',  # Usually 'localhost' for local development
+        #'PORT': '3306',  # Usually '3306' for MySQL
+        
     }
 }
 
@@ -131,7 +140,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())

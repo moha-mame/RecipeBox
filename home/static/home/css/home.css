@@ -1,121 +1,4 @@
-/* Custom CSS for Landing Page */
-body {
-    background-color: #fff;
-  }
-  nav ul img{
-    width: 100px;
-    margin-right: auto;
-}
-  .navbar-brand {
-    color:black !important;
-    font-family: Tahoma, cursive;
-    font-size: 40px;
-  }
-  
-  .navbar-nav .nav-link.active,
-  .navbar-nav .show > .nav-link {
-    color: #1b1b32;
-  }
-  
-  .form-control {
-    border: 1px solid #1b1b32;
-  }
-  
-  .container {
-    position: relative;
-    padding-top: 2%;
-  }
-  
-  .btn-outline-success,
-  .btn-outline-success:focus,
-  .btn-outline-success:active,
-  .btn-outline-success:hover {
-    color: white;
-    border-color: #1b1b32;
-    background-color: #1b1b32;
 
-  }
-  
-  .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-  }
-  
-  .btn-primary,
-  .btn-primary:hover,
-  .btn-primary:active,
-  .btn-primary:visited {
-    background-color:#1b1b32;
-  }
-  
-  #bs:hover,
-  #bt:hover {
-    opacity: 70%;
-  }
-  
-  .top-left {
-    position: absolute;
-    top: 300px;
-    left: 20px;
-    color: white;
-  }
-  
-  #img-txt {
-    font-family: 'Playfair Display', serif;
-    color: #0dd6c5;
-  }
-  
-  /* Hero section */
-  .hero {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%),
-      url('../images/prep.jpeg');
-    background-size: 100%;
-    background-color: #000000;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 30px 0;
-    text-align: center;
-    background-attachment: fixed;
-
-  }
-  
-  .hero-title {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #1b1b32;
-    font-weight: 600;
-    font-family: cursive;
-  }
-  
-  .hero-subtitle {
-    font-size: 24px;
-    color: #777;
-  }
-  
-  .section-title {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .section-description {
-    font-size: 18px;
-    color: #777;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  /* Container Styles */
-  .container1 {
-    margin-top: 50px;
-    max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    margin: auto;
-  }
  /* Custom CSS for Landing Page */
 body {
     background-color: #fff;
@@ -231,13 +114,14 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     margin: auto;
   }
-   .something-about-app{
-    text-align: justify;
-    line-height: : 2px;
+   .something-about-app {
+    text-align: center;
+    line-height: 2px;
     padding:7% 15%;
     padding-bottom: 0;
-
+    font-size: x-large;
   }
+
   form {
     margin-bottom: 20px;
   }
@@ -247,7 +131,7 @@ body {
     margin-bottom: 20px;
   }
    .btn:hover, .btn-primary:hover, input[type="submit"]:hover{
-	             background-color:#1b1b32;
+	             background-color:#f9f9ff;
 		               border-color:#1b1b32;
 			                 opacity:70%;
 				 }
