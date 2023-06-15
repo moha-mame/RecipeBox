@@ -1,24 +1,26 @@
-body {
-    font-family: Tahoma, cursive ;
-    background-color: red;
 
+body {
+    font-family: Tahoma, cursive;
+    background-color: #f8f9fa;
+   
   }
-  
+    h2{
+      text-align: center;
+    }
+  .row{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
   .container {
     margin-top: 50px;
   }
   
   .card {
-    width: 400px;
-    margin: 0 auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-header {
-    background-color: #f8f9fa;
-    color: #333;
-    font-size: 24px;
-    border-bottom: none;
+   
   }
   
   .card-img-top {
@@ -31,54 +33,126 @@ body {
   }
   
   .card-title {
-    font-size: 28px;
-
-  }
-
-  .list-group-item {
-    border: none;
-    padding: 0;
+    font-size: 24px;
+    margin-bottom: 10px;
   }
   
-  h6 {
-    font-size: 18px;
-    margin-bottom: 5px;
-    margin-top: 1rem;
-
+  .card-text {
+    font-size: 16px;
+    margin-bottom: 10px;
   }
-h4{
-  padding-left: 15px;
-}
-p{
-	text-align:justify;
-}
-li.list-group-item{
-  font-size: 12px;
-}
- label{
-  margin-top: 0.8em;
-  line-height: 2em;
- }
-
-.btn{
-  margin-top: 2em;
-  border-color: #1b1b32;
-}
-.btn:hover{
-	opacity:40%;
-	border-color:#1b1b32;
-}
-  .card-footer {
-    background-color: #f8f9fa;
-    color: #666;
+  
+  .text-muted {
     font-size: 14px;
-    border-top: none;
-    text-align: right;
+  }
+  
+  .row {
+    margin-bottom: 30px;
+  }
+  
+  .col-md-4 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .col-md-8 {
+    padding-left: 20px;
+  }
+  
+  .card-text small {
+    font-style: italic;
+  }
+  
+  .card-text b {
+    font-weight: bold;
+  }
+  .button-group a{
+
+      width: 27%;
+      padding: 0.5em;
+      margin:0 0.5em;
+      margin-top: 2em;
+      background-color: #fff;
+      text-align: center;
+      margin-bottom: 0.5em;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      border-color:#1b1b32;
+
+    }
+    .button-group a:hover{
+      
+      background-color: #1b1b32;
+      border-color:#1b1b32;
+      color:#fff;
+    }
+.button-group a[value="delete"]:hover{
+  background-color: red;
+  border-color: red;
+  color:black;
+}
+   
+    
+  .col-6 img {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+ 
+  
+  .card-list .card {
+    margin: 10px;
+  }
+  
+  .card-list .card-img-top {
+    height: 150px;
+  }
+  
+  .card-list .card-body {
     padding: 10px;
   }
-
-  @media only screen and (max-width:720px){
-	  li.list-group-item{
-		  font-size: 18px;
-	  }
+  
+  .card-list .card-title {
+    font-size: 18px;
+    margin-bottom: 5px;
   }
+  
+  .card-list .card-text {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .card-list .text-muted {
+    font-size: 12px;
+  }
+.btn-outline-success{
+	  
+	  font-size:1em;
+	  
+  }
+  @media only screen and (max-width: 720px){
+    .col-3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:100%;
+    }
+    .button-group a{
+      width: 100%;
+      margin: 0.2em;
+    }
+   .button-group a:first-of-type{
+      margin-top: 2em;
+    }
+    }
+@media only screen and (max-width: 720px){
+
+
+    .button-group a{
+      width: 100%;
+    }
+   
+    }
+
