@@ -9,12 +9,15 @@ body {
   text-transform:uppercase;
   font-size:1.2em;
 }
+.navbar-nav{
+	color:black;
+}
 a.nav-link{
 	color:black;
 }
   /* About section */
 h1.section-title{
- 	
+ 	text-align:center;
 	font-weight:600;
 	font-size:1.5em;
 }
