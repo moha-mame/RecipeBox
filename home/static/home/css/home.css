@@ -140,12 +140,12 @@ body {
     margin-bottom: 20px;
   }
  
-
-   .btn:hover, .btn-primary:hover, input[type="submit"]:hover{
-	             background-color:#fff;
-		               border-color:#1b1b32;
-			                 opacity:70%;
-				 }
+  .btn:hover, .btn-primary:hover, input[type="submit"]:hover{
+	   color:#000;
+	   background-color:#fff;
+	   border-color:#1b1b32;
+	   opacity:70%;
+   }
 
  @media only screen and (max-width:767px){
 	   .card-img-top{
