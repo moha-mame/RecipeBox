@@ -137,7 +137,10 @@ body {
 				 }
 
  @media only screen and (max-width:720px){
+	 *{
+		 font-size:20px;
+	 }
 	   .card-img-top{
 		       height: 40vw;
 	       }
-       }
+i       }
