@@ -22,6 +22,7 @@
     <form method="post" novalidate>
       {% csrf_token %}
       <h3>Create New Account</h3>
+      <h5>Sign Up for free and Join Recipe Sharing community</h5>
       {% load widget_tweaks %}
       {% for field in form.visible_fields %}
       <div class="mb-3 row">
