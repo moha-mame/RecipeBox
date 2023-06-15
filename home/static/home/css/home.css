@@ -2,23 +2,36 @@
  /* Custom CSS for Landing Page */
 body {
     background-color: #fff;
+    font-size: 16px;
   }
   
   .navbar-brand {
     color:black;
+    font-size:2em;
     font-family: Tahoma, cursive;
-    font-size: 40px;
+    
   }
   
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
     color: #1b1b32;
+    font-size:2.2em;
+    text-transform:uppercase;
   }
-  
+ .dropdown-item{
+	  font-size:1.5em;
+	  text-transform:uppercase;
+ } 
   .form-control {
-    border: 1px solid #1b1b32;
+    border: 0.1em solid lightgray;
+    height:2.5em;
+    font-size:2em;
   }
-  
+  .btn-outline-success{
+	  width:10em;
+	  font-size:2em;
+	  border-radius:4px;
+  }
   .container {
     position: relative;
     padding-top: 2%;
@@ -79,26 +92,26 @@ body {
   }
   
   .hero-title {
-    font-size: 36px;
+    font-size: 3em;;
     margin-bottom: 20px;
     color: #1b1b32;
     font-weight: 600;
-    font-family: cursive;
+    font-family: Tahoma;
   }
   
   .hero-subtitle {
-    font-size: 24px;
+    font-size: 2em;
     color: #777;
   }
   
   .section-title {
-    font-size: 32px;
+    font-size: 1em;
     text-align: center;
     margin-bottom: 30px;
   }
   
   .section-description {
-    font-size: 18px;
+    font-size: 1em;
     color: #777;
     text-align: center;
     margin-bottom: 30px;
@@ -115,11 +128,12 @@ body {
     margin: auto;
   }
    .something-about-app {
-    text-align: center;
-    line-height: 2px;
+	   margin-top:1em;
+    text-align: justify;
+    line-height:1.5em;
     padding:7% 15%;
     padding-bottom: 0;
-    font-size: x-large;
+    font-size: 2.5em;
   }
 
   form {
@@ -127,20 +141,15 @@ body {
   }
  
 
-  form {
-    margin-bottom: 20px;
-  }
    .btn:hover, .btn-primary:hover, input[type="submit"]:hover{
-	             background-color:#f9f9ff;
+	             background-color:#fff;
 		               border-color:#1b1b32;
 			                 opacity:70%;
 				 }
 
- @media only screen and (max-width:720px){
-	 *{
-		 font-size:20px;
-	 }
+ @media only screen and (max-width:767px){
 	   .card-img-top{
 		       height: 40vw;
 	       }
-i       }
+	       
+       }
