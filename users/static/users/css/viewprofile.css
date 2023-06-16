@@ -71,23 +71,25 @@ body {
       padding: 0.5em;
       margin:0 0.5em;
       margin-top: 2em;
-      background-color: #1b1b32;
+      background-color: #fff;
       text-align: center;
       margin-bottom: 0.5em;
-      color: white;
+      color: #1b1b32;
       text-decoration: none;
       border-radius: 5px;
       border-color:#1b1b32;
 
     }
     .button-group a:hover{
-      opacity: 70%;
+  
       background-color: #1b1b32;
       border-color: #1b1b32;
+      color:#fff;
     }
-.button-group a[value="delete"]{
+.button-group a[value="delete"]:hover{
   background-color: red;
   border-color: red;
+  color:#000;
 }
    
     
@@ -137,6 +139,7 @@ body {
     }
    .button-group a:first-of-type{
       margin-top: 2em;
+     font-size: 1em;
     }
     }
 @media only screen and (max-width: 720px){
@@ -147,3 +150,4 @@ body {
     }
    
     }
+

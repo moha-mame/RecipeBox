@@ -7,7 +7,6 @@ body {
   
   .navbar-brand {
     color:black;
-    font-size:1em;
     font-family: Tahoma, cursive;
     
   }
@@ -15,26 +14,23 @@ body {
   .navbar-nav .nav-link.active,
   .navbar-nav .show > .nav-link {
     color: #1b1b32;
-    font-size:1.5em;
+    font-size:1em;
     text-transform:uppercase;
   }
  .dropdown-item{
-	  font-size:1em;
+	  font-size:0.7em;
 	  text-transform:uppercase;
  } 
   .form-control {
     border: 0.1em solid lightgray;
-    height:2.5em;
-    font-size:2em;
+    height:2.3em;
+    font-size:1em;
   }
   .btn-outline-success{
 	  width:10em;
-	  font-size:2em;
+	  font-size:0.7em;
 	  border-radius:4px;
-  }
-  .container {
-    position: relative;
-    padding-top: 2%;
+    font-weight:bold;
   }
   
   .btn-outline-success,
@@ -92,7 +88,7 @@ body {
   }
   
   .hero-title {
-    font-size: 2em;;
+    font-size: 1.5em;;
     margin-bottom: 20px;
     color: #1b1b32;
     font-weight: 600;
@@ -100,7 +96,7 @@ body {
   }
   
   .hero-subtitle {
-    font-size: 1.5em;
+    font-size: 1em;
     color: #777;
   }
   
@@ -132,7 +128,7 @@ body {
     text-align: justify;
     padding:7% 15%;
     padding-bottom: 0;
-    font-size: 2em;
+    font-size: 1em;
   }
 
   form {
@@ -153,3 +149,4 @@ body {
 	       }
 	       
        }
+

@@ -92,8 +92,11 @@ body {
   border-color: red;
   color:black;
 }
-   
-    
+.btn{
+  margin-top: 2em;
+  border-color::#1b1b32;
+}
+
   .col-6 img {
     width: 100%;
     max-width: 200px;
@@ -131,6 +134,7 @@ body {
 	  font-size:1em;
 	  
   }
+
   @media only screen and (max-width: 720px){
     .col-3 {
       display: flex;
@@ -153,6 +157,7 @@ body {
     .button-group a{
       width: 100%;
     }
-   
+  
     }
+
 
