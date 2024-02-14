@@ -29,7 +29,7 @@ RecipeBox is a web application built using Django REST framework (DRF) that allo
 
 ## <a name="technologies"></a>Technologies
 
-Backend: Python, Django, MYsql<br/>
+Backend: Python, Django, MySQL<br/>
 Frontend: JavaScript, jQuery, JSON, Jinja2, HTML5, CSS, Bootstrap<br/>
 Libraries: mysqlclient, sqlparse, asgiref, Django
 
